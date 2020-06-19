@@ -2,19 +2,30 @@ My personal dotfiles.  WIP
 
 # Setup
 
-Setup is idempotent.  Do it once to setup a machine or again if you change files in setup folder
+Do once.  Creates symlinks in ~.
 
 ```bash
 $ ./setup.sh
 ```
 
-Remote:
-```bash
-$ zsh -c "curl -fsSL https://raw.githubusercontent.com/bryanmacfarlane/dotfiles/master/setup.sh"
-```
+# Zsh
 
-# Help
+Open zsh shell on MacOS
 
 ```bash
-$ dot_help
+Mac OS Dev Environment
+Welcome bryan!
+
+    help        :  show this help
+    reload      :  reload shell in same terminal
+    cl          :  clear
+    all         :  show all commands
+
+Github:
+    ghes <host> : switch current ghes (e.g. t1, t2 or dev)
+    ghes ssh    : ssh to current ghes
+    ghes web    : open web page to ghes
+
+
+√ Projects $
 ```
