@@ -21,11 +21,5 @@ Welcome bryan!
     cl          :  clear
     all         :  show all commands
 
-Github:
-    ghes <host> : switch current ghes (e.g. t1, t2 or dev)
-    ghes ssh    : ssh to current ghes
-    ghes web    : open web page to ghes
-
-
 √ Projects $
 ```
