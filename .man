@@ -1,0 +1,4 @@
+    help        :  show this help
+    reload      :  reload shell in same terminal
+    cl          :  clear
+    all         :  show all commands
