@@ -1,8 +1,11 @@
-My personal dotfiles.  WIP
+
+<p align="center">
+    <img src="https://dotfiles.github.io/images/dotfiles-logo.png"/>
+</p>
 
 ## setup
 
-Do once.  Creates symlinks in ~.
+Do once.  Creates symlinks in ~
 
 ```bash
 $ ./setup.sh
