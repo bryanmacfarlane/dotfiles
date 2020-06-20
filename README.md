@@ -1,6 +1,6 @@
 My personal dotfiles.  WIP
 
-# Setup
+## setup
 
 Do once.  Creates symlinks in ~.
 
@@ -8,7 +8,7 @@ Do once.  Creates symlinks in ~.
 $ ./setup.sh
 ```
 
-# Zsh
+## zsh
 
 Open zsh shell on MacOS
 
@@ -21,5 +21,9 @@ Welcome bryan!
     cl          :  clear
     all         :  show all commands
 
+Tools:
+    node           : v12.16.2
+    npm            : 6.14.4
+    
 √ Projects $
 ```
