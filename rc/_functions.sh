@@ -12,10 +12,13 @@ function printToolInfo() {
     # | tr ' ~' '- '
 }
 
-function dot_tools() {
+function dot_tool_versions() {
     echo
-    for filename in ${DOT_FILES_PATH}/rc/*.sh; do
-        source "${filename}"
-    done 
-    echo   
+    for filename in ${DOT_FILES_PATH}/tools/*.sh; do
+        file="${filename##*/}"
+        tool="${file%.sh}"
+        func="dot_${tool}_version"
+        eval "$func"
+    done    
+    echo
 }

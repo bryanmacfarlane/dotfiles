@@ -5,6 +5,8 @@
 
 ## setup
 
+Clone repo to ~/Projects
+
 Do once.  Creates symlinks in ~
 
 ```bash

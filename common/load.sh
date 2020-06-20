@@ -24,5 +24,14 @@ function dot_load() {
     # load public scripts
     for filename in ${DOT_FILES_PATH}/rc/_*.sh; do
         source "${filename}"
-    done            
+    done
+}
+
+function dot_load_tools() {
+    echo
+    echo Configuring tools ...
+    # load tools
+    for filename in ${DOT_FILES_PATH}/tools/*.sh; do
+        source "${filename}"
+    done    
 }

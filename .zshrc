@@ -15,6 +15,7 @@ PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{250}%1~%f%b %(!.#.$) '
 
 dot_load
 dot_help
+dot_load_tools
 echo
 
 p
