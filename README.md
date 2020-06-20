@@ -23,7 +23,7 @@ Welcome bryan!
 
     help        :  show this help
     reload      :  reload shell in same terminal
-    cl          :  clear
+    c           :  clear
     all         :  show all commands
 
 √ Projects $
