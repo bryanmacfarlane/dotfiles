@@ -38,14 +38,6 @@ function dot_help() {
     [ -f "${priv_help_path}" ] && cat "${priv_help_path}" && echo
 }
 
-function dot_tools() {
-    echo
-    echo "Tools:"
-    for filename in ${DOT_FILES_PATH}/rc/*.sh; do
-        source "${filename}"
-    done    
-}
-
 clear
 echo
 echo -n -e "\033]0;Dev Environment\007"
@@ -58,7 +50,6 @@ PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{250}%1~%f%b %(!.#.$) '
 
 dot_load
 dot_help
-dot_tools
 echo
 
 p

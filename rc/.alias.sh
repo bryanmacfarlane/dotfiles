@@ -5,6 +5,7 @@ alias cl="clear"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"
+alias tools="dot_tools"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."

@@ -1,4 +1,5 @@
     help        :  show this help
     reload      :  reload shell in same terminal
+    tools       :  list tools and versions
     cl          :  clear
     all         :  show all commands

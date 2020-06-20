@@ -21,9 +21,5 @@ Welcome bryan!
     cl          :  clear
     all         :  show all commands
 
-Tools:
-    node           : v12.16.2
-    npm            : 6.14.4
-    
 √ Projects $
 ```
