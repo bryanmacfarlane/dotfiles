@@ -1,11 +1,21 @@
 
 export DOT_FILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-echo "Caution, this will overwrite profile and rc files in homw."
+echo
+echo "Caution, this will link profile and dotfiles in home."
 read -p "Continue? " -n 1 -r
-echo    # (optional) move to a new line
+echo
+
+# symlink 
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    ln -sf "${DOT_FILES}/setup/.zshrc" "${HOME}" 
-    #cp -f "${DOT_FILES}/setup/.zshrc" "${HOME}"
+    echo
+    for filename in ${DOT_FILES}/home/.*; do
+        echo $filename
+        if [ -f ${filename} ]; then
+            echo "   linking ${filename}"
+            ln -sf "${filename}" "${HOME}"
+        fi
+    done
+    echo    
 fi

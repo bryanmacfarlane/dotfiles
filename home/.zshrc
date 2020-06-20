@@ -8,7 +8,7 @@ DOT_PRIV_PATH="${HOME}/Projects/dotprivate"
 # call to reload
 function dot_load() {
     # load private first so secrets are set before we load
-    local priv_env="${DOT_PRIV_PATH}/.env.sh"
+    local priv_env="${DOT_PRIV_PATH}/env.sh"
     if [ -f "${priv_env}" ]; then
         source "${priv_env}"
 
@@ -22,12 +22,12 @@ function dot_load() {
 
     [ ! -d "${DOT_FILES_PATH}" ] && >&2 echo "${DOT_FILES_PATH} missing" && return 1
 
-    source "${DOT_FILES_PATH}/.env.sh"
+    source "${DOT_FILES_PATH}/env.sh"
 
     # load public functions
     for filename in ${DOT_FILES_PATH}/rc/.*.sh; do
         source "${filename}"
-    done        
+    done            
 }
 
 function dot_help() {
@@ -36,6 +36,14 @@ function dot_help() {
 
     [ -f "${files_help_path}" ] && cat "${files_help_path}" && echo
     [ -f "${priv_help_path}" ] && cat "${priv_help_path}" && echo
+}
+
+function dot_tools() {
+    echo
+    echo "Tools:"
+    for filename in ${DOT_FILES_PATH}/rc/*.sh; do
+        source "${filename}"
+    done    
 }
 
 clear
@@ -50,6 +58,7 @@ PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{250}%1~%f%b %(!.#.$) '
 
 dot_load
 dot_help
+dot_tools
 echo
 
 p

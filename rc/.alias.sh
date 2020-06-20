@@ -29,6 +29,7 @@ alias l="ls -la"
 
 # git
 alias gc="git commit -a -m $@"
+alias gs="git status"
 
 
 # Trim new lines and copy to clipboard
