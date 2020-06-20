@@ -1,7 +1,7 @@
 
 alias help="dot_help"
 alias all="echo;alias;echo"
-alias cl="clear"
+alias c="clear"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"
@@ -31,6 +31,8 @@ alias l="ls -la"
 # git
 alias gc="git commit -a -m $@"
 alias gs="git status"
+alias ga="git add $@"
+alias gr="git remote -v"
 
 
 # Trim new lines and copy to clipboard

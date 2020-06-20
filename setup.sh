@@ -10,8 +10,9 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo
-    for filename in ${DOT_FILES}/home/.*; do
-        echo $filename
+    rm "${DOT_FILES}/.DS_Store"
+
+    for filename in ${DOT_FILES}/.*; do
         if [ -f ${filename} ]; then
             echo "   linking ${filename}"
             ln -sf "${filename}" "${HOME}"
