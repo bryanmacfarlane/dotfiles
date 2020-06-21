@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="https://dotfiles.github.io/images/dotfiles-logo.png"/>
+    <img src="res/tilda.png"/>
 </p>
 
 ## setup
