@@ -5,9 +5,9 @@
 
 ## setup
 
-Clone repo to ~/Projects
+Clone this repo.
 
-Do once.  Creates symlinks in ~
+Run setup.sh once.  Creates symlinks in ~
 
 ```bash
 $ ./setup.sh
