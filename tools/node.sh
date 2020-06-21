@@ -21,3 +21,10 @@ function dot_node_version() {
 		printToolInfo 'npm' $(npm --version)
 	fi
 }
+
+function dot_node_whoami() {
+	if [ -f ${nodePath} ]; then
+		whoami=$(npm whoami)
+		printToolInfo 'npm' "$whoami"
+	fi	
+}

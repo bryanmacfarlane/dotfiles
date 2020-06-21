@@ -12,7 +12,10 @@ function dot_load() {
         # load private scripts
         for filename in ${DOT_PRIV_PATH}/rc/_*.sh; do
             source "${filename}"
-        done        
+        done
+
+        local priv_sec="${DOT_PRIV_PATH}/common/secrets.sh"
+        [ -f "${priv_sec}" ] && source "${priv_sec}"
     else
         echo "skipping private. ${priv_env} does not exist"
     fi

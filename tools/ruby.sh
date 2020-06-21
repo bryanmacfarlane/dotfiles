@@ -12,3 +12,7 @@ function dot_ruby_version() {
         printToolInfo 'rails' $(rails --version)
 	}
 }
+
+function dot_ruby_whoami() {
+	# TODO
+}

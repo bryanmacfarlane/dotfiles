@@ -1,5 +1,6 @@
     help        :  show this help
     reload      :  reload shell in same terminal
+    cl          :  clear    
     tools       :  list tools and versions
-    cl          :  clear
+    whoami      :  whoami for all tools
     all         :  show all commands

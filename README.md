@@ -23,7 +23,9 @@ Welcome bryan!
 
     help        :  show this help
     reload      :  reload shell in same terminal
-    c           :  clear
+    cl          :  clear    
+    tools       :  list tools and versions
+    whoami      :  whoami for all tools
     all         :  show all commands
 
 √ Projects $

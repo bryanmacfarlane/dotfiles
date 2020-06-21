@@ -22,3 +22,15 @@ function dot_tool_versions() {
     done    
     echo
 }
+
+function dot_tool_whoami() {
+    echo
+    echo "Who am I? ..."
+    for filename in ${DOT_FILES_PATH}/tools/*.sh; do
+        file="${filename##*/}"
+        tool="${file%.sh}"
+        func="dot_${tool}_whoami"
+        eval "$func"
+    done    
+    echo
+}
