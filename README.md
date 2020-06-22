@@ -23,9 +23,11 @@ Welcome bryan!
 
     help        :  show this help
     reload      :  reload shell in same terminal
-    cl          :  clear    
+    c           :  clear    
     tools       :  list tools and versions
     whoami      :  whoami for all tools
+    setsec      :  set secret.  `setsec foo "bar baz"`
+    getsec      :  get secret.  `getsec foo`
     all         :  show all commands
 
 √ Projects $
