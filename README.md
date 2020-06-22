@@ -26,8 +26,8 @@ Welcome bryan!
     c           :  clear    
     tools       :  list tools and versions
     whoami      :  whoami for all tools
-    setsec      :  set secret.  `setsec foo "bar baz"`
-    getsec      :  get secret.  `getsec foo`
+    setsec      :  set secret.  e.g. setsec foo "bar baz"
+    getsec      :  get secret.  e.g. getsec foo
     all         :  show all commands
 
 √ Projects $
