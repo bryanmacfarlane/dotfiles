@@ -13,9 +13,6 @@ function dot_load() {
         for filename in ${DOT_PRIV_PATH}/rc/_*.sh; do
             source "${filename}"
         done
-
-        local priv_sec="${DOT_PRIV_PATH}/common/secrets.sh"
-        [ -f "${priv_sec}" ] && source "${priv_sec}"
     else
         echo "skipping private. ${priv_env} does not exist"
     fi
@@ -28,6 +25,12 @@ function dot_load() {
     for filename in ${DOT_FILES_PATH}/rc/_*.sh; do
         source "${filename}"
     done
+
+    # # load secrets
+    local priv_sec="${DOT_PRIV_PATH}/common/secrets.sh"
+    if [ -f "${priv_sec}" ]; then
+        source "${priv_sec}"
+    fi
 }
 
 function dot_load_tools() {

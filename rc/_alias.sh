@@ -7,6 +7,8 @@ alias c="clear"
 alias reload="exec ${SHELL} -l"
 alias tools="dot_tool_versions"
 alias whoami="dot_tool_whoami"
+alias setsec="dot_set_secret"
+alias getsec="dot_get_secret"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -21,7 +23,6 @@ alias dl="pushd ~/Downloads > /dev/null"
 alias dt="pushd ~/Desktop > /dev/null"
 alias p="pushd ~/Projects > /dev/null"
 alias s="pushd ~/Study > /dev/null"
-alias g="git"
 
 # Common Projects
 alias dotfiles="pushd ~/Projects/dotfiles > /dev/null"
@@ -30,10 +31,14 @@ alias dotfiles="pushd ~/Projects/dotfiles > /dev/null"
 alias l="ls -la"
 
 # git
+alias g="git"
 alias gc="git commit -a -m $@"
 alias gs="git status"
 alias ga="git add $@"
 alias gr="git remote -v"
+alias gp="git push $@"
+alias gpo="git push origin $@"
+alias gpom="git push origin master"
 
 
 # Trim new lines and copy to clipboard

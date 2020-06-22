@@ -1,13 +1,13 @@
 export DOT_FILES_PATH=$(dirname $(readlink ~/.zshrc))
 export DOT_PRIV_PATH="${DOT_FILES_PATH}/../dotprivate"
 
+
 # get rid of the dots
 # https://stackoverflow.com/a/27756399/775184
 DOT_PRIV_PATH=$(cd ${DOT_PRIV_PATH} && pwd)
 
-source "${DOT_FILES_PATH}/common/load.sh"
-
 clear
+source "${DOT_FILES_PATH}/common/load.sh"
 echo
 echo -n -e "\033]0;Dev Environment\007"
 echo Mac OS Dev Environment
