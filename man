@@ -3,6 +3,8 @@
     c           :  clear    
     tools       :  list tools and versions
     whoami      :  whoami for all tools
-    setsec      :  set secret.  e.g. setsec foo "bar baz"
+    setsec      :  set secret.setsec foo "bar baz"
     getsec      :  get secret.  e.g. getsec foo
+    tz          :  targz full dir.  tz <name> <path>
+    utz         :  extract targz dir. utz <file>
     all         :  show all commands

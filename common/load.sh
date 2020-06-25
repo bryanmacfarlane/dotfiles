@@ -10,7 +10,7 @@ function dot_load() {
         source "${priv_env}"
 
         # load private scripts
-        for filename in ${DOT_PRIV_PATH}/rc/_*.sh; do
+        for filename in ${DOT_PRIV_PATH}/rc/*.sh; do
             source "${filename}"
         done
     else
@@ -22,7 +22,7 @@ function dot_load() {
     source "${DOT_FILES_PATH}/common/env.sh"
 
     # load public scripts
-    for filename in ${DOT_FILES_PATH}/rc/_*.sh; do
+    for filename in ${DOT_FILES_PATH}/rc/*.sh; do
         source "${filename}"
     done
 
