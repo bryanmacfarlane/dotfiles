@@ -25,6 +25,7 @@ alias dl="pushd ~/Downloads > /dev/null"
 alias dt="pushd ~/Desktop > /dev/null"
 alias p="pushd ~/Projects > /dev/null"
 alias s="pushd ~/Study > /dev/null"
+alias pkg="pushd ~/Packages > /dev/null"
 
 # Common Projects
 alias dotfiles="pushd ~/Projects/dotfiles > /dev/null"
@@ -38,9 +39,11 @@ alias gc="git commit -a -m $@"
 alias gs="git status"
 alias ga="git add $@"
 alias gr="git remote -v"
-alias gp="git push $@"
-alias gpo="git push origin $@"
-alias gpom="git push origin master"
+alias gpsh="git push origin $@"
+alias gpshm="git push origin master"
+alias gpll="git pull origin $@"
+alias gpllm="git pull origin master"
+alias gcom="git checkout master"
 
 
 # Trim new lines and copy to clipboard
