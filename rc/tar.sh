@@ -1,16 +1,13 @@
 
-# $1 name
-# $2 path
+# $1 path to compress
+# $2 output targz file
 function dot_targz() {
-    # set -e
-    local tgt="~/Packages/$1.tar.gz"
-    mkdir -p ~/Packages
-    pushd "${2}" > /dev/null
-    tar -c -z -f "${tgt}" --strip-components=1 .
-    echo "Created ${tgt}"
-    popd > /dev/null
+    tar -C $1 -czv -f $2 .
 }
 
+# $1 file to uncompress
+# $2 path to uncompress to
+# will create the target path if it does not exist
 function dot_untargz() {
-    tar xzf $1
+    mkdir -p $2 && tar -C $2 -xzv -f $1
 }

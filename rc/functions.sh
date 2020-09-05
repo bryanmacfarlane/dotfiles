@@ -74,3 +74,11 @@ function dot_get_secret() {
     mkdir -p "${DOT_PRIV_PATH}/secrets"
     openssl rsautl -inkey "${DOT_KEY_PATH}" -decrypt < "${DOT_PRIV_PATH}/secrets/${1}.dat"
 }
+
+function dot_list_secrets() {
+    for entry in "${DOT_PRIV_PATH}/secrets"/*.dat
+    do
+        file=${entry##*/}
+        echo ${file%.*}
+    done    
+}

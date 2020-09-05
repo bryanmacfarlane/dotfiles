@@ -1,10 +1,16 @@
     help        :  show this help
     reload      :  reload shell in same terminal
     c           :  clear    
+
     tools       :  list tools and versions
     whoami      :  whoami for all tools
-    setsec      :  set secret.setsec foo "bar baz"
+
+    setsec      :  set secret.  e.g. setsec foo "bar baz"
     getsec      :  get secret.  e.g. getsec foo
-    tz          :  targz full dir.  tz <name> <path>
-    utz         :  extract targz dir. utz <file>
+    lssec       :  list secrets.
+
+    tz          :  targz full dir.  tz <pathToCompress> <outputfile>
+                   tz ./tools ./tools.tar.gz
+    utz         :  extract targz dir. utz <fileToUncompress> <pathUncompressTo> 
+                   utz ./tools.tar.gz ./tools 
     all         :  show all commands

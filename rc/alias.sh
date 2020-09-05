@@ -9,6 +9,7 @@ alias tools="dot_tool_versions"
 alias whoami="dot_tool_whoami"
 alias setsec="dot_set_secret"
 alias getsec="dot_get_secret"
+alias lssec="dot_list_secrets"
 alias tz="dot_targz"
 alias utz="dot_untargz"
 
