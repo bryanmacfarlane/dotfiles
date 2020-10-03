@@ -3,7 +3,7 @@
     c           :  clear    
 
     tools       :  list tools and versions
-    whoami      :  whoami for all tools
+    me          :  who am I for all tools
 
     setsec      :  set secret.  e.g. setsec foo "bar baz"
     getsec      :  get secret.  e.g. getsec foo
