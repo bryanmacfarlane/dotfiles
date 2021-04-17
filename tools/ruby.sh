@@ -12,9 +12,9 @@ function dot_ruby_version() {
 	fi
 
 	# curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
-	[ ! $(which rails) ] || {
-        printToolInfo 'rails' $(rails --version)
-	}
+	if [ -x "$(command -v rails)" ]; then
+        printToolInfo 'rails' "$(rails --version)"
+	fi
 }
 
 function dot_ruby_whoami() {
