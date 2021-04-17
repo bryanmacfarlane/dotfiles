@@ -1,11 +1,15 @@
 
-[ ! $(which rbenv) ] || {
+if [ -x "$(command -v rbenv)" ]; then
 	eval "$(rbenv init -)"
-}
+fi
 
 function dot_ruby_version() {
-    printToolInfo 'rbenv' $(rbenv version)
-    printToolInfo 'ruby' $(ruby --version)
+	if [ -x "$(command -v rbenv)" ]; then
+    	printToolInfo 'rbenv' $(rbenv version)
+	fi
+	if [ -x "$(command -v ruby)" ]; then
+    	printToolInfo 'ruby' "$(ruby --version)"
+	fi
 
 	# curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 	[ ! $(which rails) ] || {

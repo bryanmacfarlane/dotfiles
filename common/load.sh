@@ -39,5 +39,5 @@ function dot_load_tools() {
     # load tools
     for filename in ${DOT_FILES_PATH}/tools/*.sh; do
         source "${filename}"
-    done    
+    done 
 }

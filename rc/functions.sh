@@ -48,9 +48,10 @@ function dot_ensure_key() {
     fi
 
     if [ ! -f "${DOT_KEY_PATH}" ]; then
-        echo "${DOT_KEY_PATH} does not exist.  creating.  make sure you backup and save"
-        mkdir -p "${DOT_CFG_PATH}"
-        openssl genrsa -out "${DOT_KEY_PATH}" 2048    
+        echo "${DOT_KEY_PATH} does not exist.  see instructions in dotprivate/secrets"
+        # echo "${DOT_KEY_PATH} does not exist.  creating.  make sure you backup and save"
+        # mkdir -p "${DOT_CFG_PATH}"
+        # openssl genrsa -out "${DOT_KEY_PATH}" 2048    
     fi
 }
 
