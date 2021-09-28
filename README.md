@@ -10,7 +10,7 @@ Clone this repo.
 Run setup.sh once.  Creates symlinks in ~
 
 ```bash
-$ ./setup.sh
+$ bash ./setup.sh
 ```
 
 ## zsh
