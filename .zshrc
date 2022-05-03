@@ -10,7 +10,7 @@ clear
 source "${DOT_FILES_PATH}/common/load.sh"
 echo
 echo -n -e "\033]0;Dev Environment\007"
-echo Mac OS Dev Environment
+echo Dev Environment
 echo Welcome ${USER}!
 echo
 
