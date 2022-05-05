@@ -5,20 +5,18 @@
 
 ## setup
 
-Clone this repo.
-
 Run setup.sh once.  Creates symlinks in ~
 
 ```bash
-$ bash ./setup.sh
+$ ./setup.sh
 ```
+
+Note: this is automatically run when [used in a github codespace](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account#dotfiles).
 
 ## zsh
 
-Open zsh shell on MacOS
-
 ```bash
-Mac OS Dev Environment
+Dev Environment
 Welcome bryan!
 
     help        :  show this help

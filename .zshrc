@@ -22,4 +22,4 @@ dot_help
 dot_load_tools
 echo
 
-p
+w

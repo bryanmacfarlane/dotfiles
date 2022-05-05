@@ -1,4 +1,14 @@
 
+workspaces="~"
+if [ -d "${HOME}/Projects" ]; then 
+    workspaces="~/Projects" 
+elif [ -d "/workspaces" ]; then
+    # codespaces
+    workspaces="/workspaces"
+fi 
+
+echo "workspace: ${workspaces}"
+
 alias help="dot_help"
 alias all="echo;alias;echo"
 alias c="clear"
@@ -24,7 +34,7 @@ alias -- -="cd -"
 # Shortcuts
 alias dl="pushd ~/Downloads > /dev/null"
 alias dt="pushd ~/Desktop > /dev/null"
-alias p="pushd ~/Projects > /dev/null"
+alias w="pushd ${workspaces} > /dev/null"
 alias s="pushd ~/Study > /dev/null"
 alias pkg="pushd ~/Packages > /dev/null"
 
