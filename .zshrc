@@ -22,4 +22,8 @@ dot_help
 dot_load_tools
 echo
 
+# codespaces automatically takes you into that repo.  
+# else, lets start in the root of our workspaces directory (the w alias)
+if [ -z "${CODESPACES}" ]; then 
 w
+fi
