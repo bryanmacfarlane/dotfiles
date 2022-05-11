@@ -1,18 +1,20 @@
+# .zshrc is a symlink to .zshrc in this repo wherever it is cloned on disk
 export DOT_FILES_PATH=$(dirname $(readlink ~/.zshrc))
-export DOT_PRIV_PATH="${DOT_FILES_PATH}/../dotprivate"
 
+source "${DOT_FILES_PATH}/dot/load.sh"
 
-# get rid of the dots
-# https://stackoverflow.com/a/27756399/775184
-DOT_PRIV_PATH=$(cd ${DOT_PRIV_PATH} && pwd)
+# workspaces is either in ~/Projects or in codespaces it's in /codespaces
+export DOT_WORKSPACE_PATH="${HOME}/Projects"
+if [ -d "/workspaces" ]; then
+    # codespaces
+    DOT_WORKSPACE_PATH="/workspaces"
+fi
+
+export DOT_PRIV_PATH="${DOT_WORKSPACE_PATH}/dotprivate"
 
 clear
-source "${DOT_FILES_PATH}/common/load.sh"
-echo
-echo -n -e "\033]0;Dev Environment\007"
-echo Dev Environment
-echo Welcome ${USER}!
-echo
+
+"${DOT_FILES_PATH}/dot/welcome.sh"
 
 # https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
 PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{250}%1~%f%b %(!.#.$) '

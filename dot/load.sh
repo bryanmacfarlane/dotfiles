@@ -19,7 +19,7 @@ function dot_load() {
 
     [ ! -d "${DOT_FILES_PATH}" ] && >&2 echo "${DOT_FILES_PATH} missing" && return 1
 
-    source "${DOT_FILES_PATH}/common/env.sh"
+    # source "${DOT_FILES_PATH}/common/env.sh"
 
     # load public scripts
     for filename in ${DOT_FILES_PATH}/rc/*.sh; do
