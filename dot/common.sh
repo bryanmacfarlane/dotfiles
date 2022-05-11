@@ -83,11 +83,6 @@ dot_message() {
     printf "\n"
 }
 
-# manSection() {
-#     printf "\n  "
-#     cprint "$1" "white" "under" "intense"
-# }
-
 dot_man() {    
     cmd="$(printf "    %-15s" "${1}")"
     cprint "$cmd" "cyan" "intense"
