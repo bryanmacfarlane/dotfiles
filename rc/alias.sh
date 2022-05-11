@@ -1,17 +1,7 @@
 
-workspaces="~"
-if [ -d "${HOME}/Projects" ]; then 
-    workspaces="~/Projects" 
-elif [ -d "/workspaces" ]; then
-    # codespaces
-    workspaces="/workspaces"
-fi 
-
-echo "workspace: ${workspaces}"
-
 alias help="dot_help"
 alias all="echo;alias;echo"
-alias c="clear"
+alias c="tput reset"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"
@@ -34,7 +24,7 @@ alias -- -="cd -"
 # Shortcuts
 alias dl="pushd ~/Downloads > /dev/null"
 alias dt="pushd ~/Desktop > /dev/null"
-alias w="pushd ${workspaces} > /dev/null"
+alias w="pushd ${DOT_WORKSPACE_PATH} > /dev/null"
 alias s="pushd ~/Study > /dev/null"
 alias pkg="pushd ~/Packages > /dev/null"
 

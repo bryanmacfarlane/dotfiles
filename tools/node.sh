@@ -1,8 +1,8 @@
 
-export NVM_DIR="$HOME/.nvm"
-if [ -d ${NVM_DIR} ]; then
-	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-	nvm use 14
+NODE_VERSION=16
+NODE_BREW_PATH=/usr/local/opt/node@16/bin
+if [ -d "${NODE_BREW_PATH}" ]; then 
+	PATH="$NODE_BREW_PATH:$PATH"
 fi
 
 nodePath=`which node`

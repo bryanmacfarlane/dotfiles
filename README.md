@@ -1,6 +1,7 @@
 
-<p align="center">
-    <img src="res/tilda.png"/>
+
+<p align="center" style="font-size:20vw">
+    ~/.
 </p>
 
 ## setup
