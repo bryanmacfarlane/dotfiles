@@ -1,8 +1,5 @@
 
-
-<p align="center" style="font-size:20vw">
-    ~/.
-</p>
+# ~
 
 ## setup
 
@@ -20,14 +17,27 @@ Note: this is automatically run when [used in a github codespace](https://docs.g
 Dev Environment
 Welcome bryan!
 
-    help        :  show this help
-    reload      :  reload shell in same terminal
-    c           :  clear    
-    tools       :  list tools and versions
-    whoami      :  whoami for all tools
-    setsec      :  set secret.  e.g. setsec foo "bar baz"
-    getsec      :  get secret.  e.g. getsec foo
-    all         :  show all commands
+ Workspaces : /Users/bryan/Projects
+
+
+ Commands
+
+    help           show this help
+    reload         reload shell in same terminal
+    c              clear
+    all            show all commands
+
+    tools          list tools and versions
+    me             who am I for all tools
+
+    setsec         set secret.  e.g. setsec foo "bar baz"
+    getsec         get secret.  e.g. getsec foo
+    lssec          list secrets.
+
+    tz             targz full dir.  tz <pathToCompress> <outputfile>
+                      ( e.g. tz ./tools ./tools.tar.gz )
+    utz            extract targz dir. utz <fileToUncompress> <pathUncompressTo>
+                      ( e.g. utz ./tools.tar.gz ./tools )
 
 √ Projects $
 ```
