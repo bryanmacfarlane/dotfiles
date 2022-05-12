@@ -4,7 +4,7 @@ alias all="echo;alias;echo"
 alias c="tput reset"
 
 # Reload the shell (i.e. invoke as a login shell)
-alias reload="exec ${SHELL} -l"
+alias reload="dot_reload"
 alias tools="dot_tool_versions"
 alias me="dot_tool_whoami"
 alias setsec="dot_set_secret"

@@ -26,6 +26,11 @@ echo
 
 # codespaces automatically takes you into that repo.  
 # else, lets start in the root of our workspaces directory (the w alias)
-if [ -z "${CODESPACES}" ]; then 
+# on reload keep same dir (it writes a .curr file)
+if [ -f "${DOT_FILES_PATH}/.curr" ]; then 
+    curr_dir=$(cat "${DOT_FILES_PATH}/.curr")
+    cd "${curr_dir}"
+    rm .curr
+elif [ -z "${CODESPACES}" ]; then 
 w
 fi

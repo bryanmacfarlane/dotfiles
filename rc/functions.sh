@@ -62,3 +62,8 @@ function dot_list_secrets() {
         echo ${file%.*}
     done    
 }
+
+function dot_reload() {
+    echo "$(pwd)">"${DOT_FILES_PATH}/.curr"
+    exec ${SHELL} -l
+}
