@@ -1,4 +1,3 @@
-#!/bin/bash
 
 [[ "${DOT_COMMON:-""}" == "loaded" ]] && return 0
 DOT_COMMON=loaded
@@ -51,9 +50,11 @@ cprint() {
     codes="\033["
     for ((i=1; i<=$#; i++))
     do
-        id=${!i}
-        # echo "${id} is ${!id}"
-        codes="${codes}${!id}"
+        # bash: id=${!i}
+        id=${(P)i}
+
+        # bash: codes="${codes}${!id}"
+        codes="${codes}${(P)id}"
 
         if [ $i -ne $# ]; then
             codes="${codes};"

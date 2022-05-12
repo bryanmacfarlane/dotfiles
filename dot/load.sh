@@ -1,6 +1,4 @@
-#!/bin/bash
-
-# set -e 
+#!/bin/zsh
 
 # call to reload
 function dot_load() {
