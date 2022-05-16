@@ -1,12 +1,15 @@
-
-
+#!/bin/bash -e
 
 mongodPath=`which mongod`
-if [ -f ${mongodPath} ]; then
-    dbPath="~/data/mongodb";
-    if 
-    alias mongod="ulimit -n 1024 && sudo mongod --dbpath ~/data/mongodb"
-fi
+
+init() {
+    if [ -f ${mongodPath} ]; then
+        dbPath="${HOME}/data/mongodb";
+        if [ -d "" ]; then 
+            alias mongod="ulimit -n 1024 && sudo mongod --dbpath ${HOME}/data/mongodb"
+        fi 
+    fi
+}
 
 function dot_mongod_version() {
 	if [ -f ${mongodPath} ]; then
@@ -14,6 +17,16 @@ function dot_mongod_version() {
 	fi
 }
 
-function dot_mongod_whoami() {
-
+info() {
+    return
 }
+
+whoami() {
+    return
+}
+
+install() {
+    echo "TODO: implement"
+}
+
+"$@"

@@ -5,7 +5,7 @@ alias c="tput reset"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="dot_reload"
-alias tools="dot_tool_versions"
+alias tools="${DOT_FILES_PATH}/dot/tools.sh $@"
 alias me="dot_tool_whoami"
 alias setsec="dot_set_secret"
 alias getsec="dot_get_secret"

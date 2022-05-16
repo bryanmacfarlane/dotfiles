@@ -46,15 +46,17 @@ cprint() {
 
     msg=$1
     shift
+    # echo "$#"
 
     codes="\033["
     for ((i=1; i<=$#; i++))
     do
-        # bash: id=${!i}
-        id=${(P)i}
+        id=${!i}
+        # id=${(P)i}
 
         # bash: codes="${codes}${!id}"
-        codes="${codes}${(P)id}"
+        codes="${codes}${!id}"
+        # codes="${codes}${(P)id}"
 
         if [ $i -ne $# ]; then
             codes="${codes};"
@@ -69,15 +71,16 @@ cprint() {
 
 dot_section() {
     printf "\n "
-    cprint "${1}" "white" "intense"
+    cprint " 🚀 ${1} " "white" "oncyan" "intense"
     if [ "$2" ]; then 
         printf " : $2"
     fi
     echo
+    echo 
 }
 
 dot_message() {
-    cprint "${1}" "white" "intense"
+    cprint "    ${1}" "cyan" "intense"
     if [ "$2" ]; then 
         printf " $2"
     fi

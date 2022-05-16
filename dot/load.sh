@@ -30,12 +30,3 @@ function dot_load() {
         source "${priv_sec}"
     fi
 }
-
-function dot_load_tools() {
-    echo
-    echo Configuring tools ...
-    # load tools
-    for filename in ${DOT_FILES_PATH}/tools/*.sh; do
-        source "${filename}"
-    done 
-}

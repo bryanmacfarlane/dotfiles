@@ -1,26 +1,49 @@
-# Download gcloud to Downloads, extract and then run
-#  mv ~/Downloads/google-cloud-sdk /usr/local/bin/
-# after opening a new shell, run to login:
-# gcloud init
+#!/bin/zsh -e
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/path.zsh.inc'; fi
+gc_version="385.0.0"
+gc_dlPath="${HOME}/Downloads/cloud-${gc_version}"
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/usr/local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/completion.zsh.inc'; fi
+init() {
+	# The next line updates PATH for the Google Cloud SDK.
+	if [ -f "${gc_dlPath}/google-cloud-sdk/path.zsh.inc" ]; then . "${gc_dlPath}/google-cloud-sdk/path.zsh.inc"; fi
 
-gcloudPath=`which gcloud`
-function dot_gcloud_version() {
+	# The next line enables shell command completion for gcloud.
+	if [ -f "${gc_dlPath}/google-cloud-sdk/completion.zsh.inc" ]; then . "${gc_dlPath}/google-cloud-sdk/completion.zsh.inc"; fi
+}
+
+info() {
+	init
+
+	gcloudPath=`which gcloud`
     # gcloud version --format=json
 	if [ -f ${gcloudPath} ]; then
-		printToolInfo 'gcloud core' $( gcloud version --format="value(core)")
-        printToolInfo 'gcloud sdk' $(gcloud version --format='value("Google Cloud SDK")')
+		gcloud version
+	else
+		echo "not installed"
 	fi
 }
 
-function dot_gcloud_whoami() {
+whoami() {
 	if [ -f ${gcloudPath} ]; then
-		whoami=$(gcloud config get-value account)
-		printToolInfo 'gcloud' "$whoami"
+		gcloud config get-value account
 	fi	
 }
+
+# https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-385.0.0-darwin-x86_64.tar.gz
+install() {
+	if [ "$(uname)" = "Darwin" ]; then
+		file="google-cloud-cli-${gc_version}-darwin-x86_64.tar.gz"
+		link="https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/"
+
+		echo "Downloading to ${gc_dlPath} ..."
+		mkdir -p "${gc_dlPath}"
+		pushd "${gc_dlPath}"
+		curl -L "$link""$file" | tar xz 
+		CLOUDSDK_CORE_DISABLE_PROMPTS=1 ./google-cloud-sdk/install.sh
+
+	elif [ "$(uname)" = "Linux" ]; then
+		return 
+	fi	
+}
+
+"$@"

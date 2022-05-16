@@ -1,22 +1,31 @@
+#!/bin/bash -e
 
-if [ -x "$(command -v rbenv)" ]; then
-	eval "$(rbenv init -)"
-fi
-
-function dot_ruby_version() {
+init() {
 	if [ -x "$(command -v rbenv)" ]; then
-    	printToolInfo 'rbenv' $(rbenv version)
+		eval "$(rbenv init -)"
+	fi
+}
+
+info() {
+	if [ -x "$(command -v rbenv)" ]; then
+    	rbenv version
 	fi
 	if [ -x "$(command -v ruby)" ]; then
-    	printToolInfo 'ruby' "$(ruby --version)"
+    	ruby --version
 	fi
 
 	# curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 	if [ -x "$(command -v rails)" ]; then
-        printToolInfo 'rails' "$(rails --version)"
+        rails --version
 	fi
 }
 
-function dot_ruby_whoami() {
-	# TODO
+whoami() {
+    return
 }
+
+install() {
+    echo "TODO: implement"
+}
+
+"$@"

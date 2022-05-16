@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash -e
 
 SCRIPT_DIR="$( cd "$( dirname "$0" )" && pwd )"
 . $SCRIPT_DIR/common.sh
@@ -11,7 +11,7 @@ dot_man "c" "clear"
 dot_man "all" "show all commands"
 
 echo
-dot_man "tools" "list tools and versions"
+dot_man "tools" "list tools and info"
 dot_man "me" "who am I for all tools"
 
 echo

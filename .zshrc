@@ -21,8 +21,10 @@ PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{250}%1~%f%b %(!.#.$) '
 
 dot_load
 dot_help
-dot_load_tools
-echo
+
+"${DOT_FILES_PATH}/dot/tools.sh" "init"
+# dot_load_tools
+# echo
 
 # codespaces automatically takes you into that repo.  
 # else, lets start in the root of our workspaces directory (the w alias)
@@ -30,7 +32,7 @@ echo
 if [ -f "${DOT_FILES_PATH}/.curr" ]; then 
     curr_dir=$(cat "${DOT_FILES_PATH}/.curr")
     cd "${curr_dir}"
-    rm .curr
+    rm -rf .curr > /dev/null
 elif [ -z "${CODESPACES}" ]; then 
 w
 fi
