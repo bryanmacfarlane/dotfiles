@@ -2,17 +2,14 @@
 
 denoPath=`which deno`
 
-init() {
-    if [ -f ${denoPath} ]; then
-        echo "TODO: fix"
-        #deno completions zsh > ~/.zsh/_deno
-    fi 
-}
-
 info() {
     if [ -f ${denoPath} ]; then
-        which deno
+        echo 
         deno --version
+        which deno
+        echo 
+    else 
+        echo "Not installed"
     fi 
 }
 

@@ -1,0 +1,14 @@
+export TOOL_NODE_VERSION=16
+export TOOL_NODE_BREW_PATH=/usr/local/opt/node@16/bin
+export TOOL_NODE_PATH=$(which node)
+
+if [ -d "${TOOL_NODE_BREW_PATH}" ]; then 
+	PATH="$TOOL_NODE_BREW_PATH:$PATH"
+fi
+
+if [ -f ${TOOL_NODE_PATH} ]; then
+    alias n="node $@"
+    alias nd="node --debug=5858 $@"
+    alias ndb="node --debug-brk=5858 $@"
+    alias ni="open http://localhost:8080/debug?port=5858 && node-inspector"	
+fi	

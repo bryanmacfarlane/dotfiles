@@ -3,21 +3,9 @@
 # install brew if not installed
 # we can install most other things using brew afterwards
 
-init() {
-    return
-}
-
-function dot_brew_version() {
+info() {
     echo.
     brew --version
-}
-
-function dot_brew_whoami() {
-    return 
-}
-
-info() {
-    return
 }
 
 whoami() {

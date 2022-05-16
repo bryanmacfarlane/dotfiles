@@ -1,0 +1,8 @@
+# TODO: fix
+
+denoPath=`which deno`
+
+if [ -f ${denoPath} ]; then
+    # TODO: fix
+    # deno completions zsh > ~/.zsh/_deno
+fi 

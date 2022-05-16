@@ -1,11 +1,5 @@
 #!/bin/bash -e
 
-init() {
-	if [ -x "$(command -v rbenv)" ]; then
-		eval "$(rbenv init -)"
-	fi
-}
-
 info() {
 	if [ -x "$(command -v rbenv)" ]; then
     	rbenv version

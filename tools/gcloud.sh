@@ -1,19 +1,6 @@
 #!/bin/zsh -e
 
-gc_version="385.0.0"
-gc_dlPath="${HOME}/Downloads/cloud-${gc_version}"
-
-init() {
-	# The next line updates PATH for the Google Cloud SDK.
-	if [ -f "${gc_dlPath}/google-cloud-sdk/path.zsh.inc" ]; then . "${gc_dlPath}/google-cloud-sdk/path.zsh.inc"; fi
-
-	# The next line enables shell command completion for gcloud.
-	if [ -f "${gc_dlPath}/google-cloud-sdk/completion.zsh.inc" ]; then . "${gc_dlPath}/google-cloud-sdk/completion.zsh.inc"; fi
-}
-
 info() {
-	init
-
 	gcloudPath=`which gcloud`
     # gcloud version --format=json
 	if [ -f ${gcloudPath} ]; then
@@ -24,8 +11,12 @@ info() {
 }
 
 whoami() {
+	gcloudPath=`which gcloud`
+
 	if [ -f ${gcloudPath} ]; then
 		gcloud config get-value account
+	else
+		echo "not installed"
 	fi	
 }
 
@@ -35,15 +26,25 @@ install() {
 		file="google-cloud-cli-${gc_version}-darwin-x86_64.tar.gz"
 		link="https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/"
 
-		echo "Downloading to ${gc_dlPath} ..."
-		mkdir -p "${gc_dlPath}"
-		pushd "${gc_dlPath}"
-		curl -L "$link""$file" | tar xz 
+		install_script="${TOOL_GCLOUD_PATH}/google-cloud-sdk/install.sh"
+		echo "${install_script}"
+
+		if [ ! -f "${install_script}" ]; then 
+			rm -rf "${TOOL_GCLOUD_PATH}"
+			echo "Downloading to ${TOOL_GCLOUD_PATH} ..."
+			mkdir -p "${TOOL_GCLOUD_PATH}"
+			pushd "${TOOL_GCLOUD_PATH}"
+			curl -L "$link""$file" | tar xz 
+		else
+			pushd "${TOOL_GCLOUD_PATH}" 
+			echo "${install_script} exists.  Skipping download"
+		fi
+
 		CLOUDSDK_CORE_DISABLE_PROMPTS=1 ./google-cloud-sdk/install.sh
 
 	elif [ "$(uname)" = "Linux" ]; then
 		return 
-	fi	
+	fi 
 }
 
 "$@"
