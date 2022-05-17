@@ -20,6 +20,11 @@ install() {
     "${DOT_TOOLS_PATH}/${1}.sh" "install"
 } 
 
+whoami() {
+    assert "$1"
+    "${DOT_TOOLS_PATH}/${1}.sh" "whoami"
+}
+
 ls() {
     count=$(find "${DOT_TOOLS_PATH}" -name "*.sh" | wc -l)
     if [ $count -eq 0 ]; then return; fi

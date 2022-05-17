@@ -6,7 +6,11 @@ dot_tools_info() {
 
 dot_tools_install() {
     "${DOT_DOT_PATH}/tools.sh" "install" "$1"
-} 
+}
+
+dot_tools_whoami() {
+    "${DOT_DOT_PATH}/tools.sh" "whoami" "$1"
+}
 
 dot_tools_init() {
     for file in ${DOT_TOOLS_PATH}/*_init; do
