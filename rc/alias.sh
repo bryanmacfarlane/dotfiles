@@ -45,6 +45,14 @@ alias gpshm="git push origin master"
 alias gpll="git pull origin $@"
 alias gpllm="git pull origin master"
 alias gcom="git checkout master"
+# undo local commits
+# https://stackoverflow.com/a/927386/775184
+alias gulast="git reset HEAD~"
+# revert local changes
+alias greset="git reset --hard"
+
+alias grestore="git restore ."
+
 
 
 # Trim new lines and copy to clipboard
