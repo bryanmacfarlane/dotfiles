@@ -30,7 +30,9 @@ dot_tools() {
         "dot_tools_$cmd" "$@"
 
         # reload tools env and paths
-        dot_tools_init
+        if [ "$cmd" != "init" ]; then 
+            dot_tools_init
+        fi
     else
         dot_tools_ls
     fi 

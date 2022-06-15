@@ -19,6 +19,17 @@ popd () {
     command popd "$@" > /dev/null
 }
 
+# https://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there
+pathappend() {
+  for ARG in "$@"
+  do
+    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+        echo "appending path ${ARG}"
+        PATH="${PATH:+"$PATH:"}$ARG"
+    fi
+  done
+}
+
 cprint() {
     # https://stackoverflow.com/a/64824268/775184
     intense='1'

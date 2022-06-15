@@ -3,6 +3,7 @@ export DOT_FILES_PATH=$(dirname $(readlink ~/.zshrc))
 export DOT_DOT_PATH="${DOT_FILES_PATH}/dot"
 export DOT_TOOLS_PATH="${DOT_FILES_PATH}/tools"
 
+source "${DOT_FILES_PATH}/dot/common.sh"
 source "${DOT_FILES_PATH}/dot/load.sh"
 
 # workspaces is either in ~/Projects or in codespaces it's in /codespaces
@@ -23,10 +24,6 @@ PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{250}%1~%f%b %(!.#.$) '
 
 dot_load
 dot_help
-
-# "${DOT_FILES_PATH}/dot/tools.sh" "init"
-# dot_load_tools
-# echo
 dot_tools "init"
 
 # codespaces automatically takes you into that repo.  
