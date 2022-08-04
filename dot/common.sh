@@ -12,11 +12,11 @@ function fail()
 }
 
 pushd () {
-    command pushd "$@" > /dev/null
+    builtin pushd "$@" > /dev/null
 }
 
 popd () {
-    command popd "$@" > /dev/null
+    builtin popd "$@" > /dev/null
 }
 
 # https://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there
