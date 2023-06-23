@@ -1,16 +1,14 @@
 #!/bin/zsh -e
 
-denoPath=`which deno`
-
 info() {
-    if [ -f ${denoPath} ]; then
+    if [ -x "$(command -v deno)" ]; then 
         echo 
         deno --version
         which deno
         echo 
     else 
-        echo "Not installed"
-    fi 
+        echo "Not installed or not in PATH"
+    fi
 }
 
 whoami() {
@@ -18,7 +16,7 @@ whoami() {
 }
 
 install() {
-    echo "TODO: implement"
+    brew install deno
 }
 
 "$@"
