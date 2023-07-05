@@ -3,12 +3,12 @@ brewPath="/usr/local/bin/brew"
 
 if [ "$(uname)" = "Linux" ]; then
     brewPath="/home/linuxbrew/.linuxbrew/bin"
+elif [ "$(uname)" = "Darwin" ]; then
+    brewPath="/opt/homebrew/bin"
 fi 
 
 if [ ! -x "$(command -v brew)" ]; then
     if [ -d "${brewPath}" ]; then
-        echo "adding ${brewPath} to PATH ..."
-
-        export PATH="${brewPath}:${PATH}"
+        eval "$(${brewPath}/brew shellenv)"
     fi  
 fi
