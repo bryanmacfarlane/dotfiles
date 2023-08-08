@@ -52,6 +52,8 @@ alias gulast="git reset HEAD~"
 alias greset="git reset --hard"
 
 alias grestore="git restore ."
+# https://superuser.com/a/1127520
+alias gssh="ssh-add -k ~/.ssh/id_ed25519"
 
 
 
