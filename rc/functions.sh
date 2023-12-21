@@ -36,7 +36,7 @@ function dot_set_secret() {
 
     dot_ensure_key
     local secpath="${DOT_PRIV_PATH}/secrets/${1}.dat"
-    echo "${2}" | openssl rsautl -inkey "${DOT_KEY_PATH}" -encrypt > "${secpath}"
+    echo "${2}" | openssl pkeyutl -inkey "${DOT_KEY_PATH}" -encrypt > "${secpath}"
     echo "created in ${secpath}"
 }
 
@@ -52,7 +52,7 @@ function dot_get_secret() {
         return
     fi
 
-    openssl rsautl -inkey "${DOT_KEY_PATH}" -decrypt < "${DOT_PRIV_PATH}/secrets/${1}.dat"
+    openssl pkeyutl -inkey "${DOT_KEY_PATH}" -decrypt < "${DOT_PRIV_PATH}/secrets/${1}.dat"
 }
 
 function dot_list_secrets() {
