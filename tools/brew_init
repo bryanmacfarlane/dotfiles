@@ -1,11 +1,5 @@
 
-brewPath="/usr/local/bin/brew"
-
-if [ "$(uname)" = "Linux" ]; then
-    brewPath="/home/linuxbrew/.linuxbrew/bin"
-elif [ "$(uname)" = "Darwin" ]; then
-    brewPath="/opt/homebrew/bin"
-fi 
+brewPath="/opt/homebrew/bin"
 
 if [ ! -x "$(command -v brew)" ]; then
     if [ -d "${brewPath}" ]; then
