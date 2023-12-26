@@ -1,8 +1,8 @@
-# TODO: fix
 
-denoPath=`which deno`
+DENO_PATH="${HOME}/.deno/bin/"
 
-if [ -f ${denoPath} ]; then
+if [ -d ${DENO_PATH} ]; then
+    pathappend "${DENO_PATH}"
     # TODO: fix
     # deno completions zsh > ~/.zsh/_deno
 fi 

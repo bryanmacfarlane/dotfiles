@@ -15,8 +15,8 @@ whoami() {
     return
 }
 
-install() {
-    brew install deno
+install() {    
+    curl -fsSL https://deno.land/x/install/install.sh | sh
 }
 
 "$@"
