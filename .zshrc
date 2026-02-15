@@ -1,5 +1,3 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/Users/bryan/.zsh/completions:"* ]]; then export FPATH="/Users/bryan/.zsh/completions:$FPATH"; fi
 # .zshrc is a symlink to .zshrc in this repo wherever it is cloned on disk
 export DOT_FILES_PATH=$(dirname $(readlink ~/.zshrc))
 export DOT_DOT_PATH="${DOT_FILES_PATH}/dot"
@@ -28,16 +26,13 @@ dot_load
 dot_help
 dot_tools "init"
 
-# codespaces automatically takes you into that repo.  
+# codespaces automatically takes you into that repo.
 # else, lets start in the root of our workspaces directory (the w alias)
 # on reload keep same dir (it writes a .curr file)
-if [ -f "${DOT_FILES_PATH}/.curr" ]; then 
+if [ -f "${DOT_FILES_PATH}/.curr" ]; then
     curr_dir=$(cat "${DOT_FILES_PATH}/.curr")
     cd "${curr_dir}"
     rm -rf .curr > /dev/null
-elif [ -z "${CODESPACES}" ]; then 
+elif [ -z "${CODESPACES}" ]; then
 w
 fi
-# Initialize zsh completions (added by deno install script)
-autoload -Uz compinit
-compinit
