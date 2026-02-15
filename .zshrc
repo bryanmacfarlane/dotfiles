@@ -26,13 +26,13 @@ dot_load
 dot_help
 dot_tools "init"
 
-# codespaces automatically takes you into that repo.  
+# codespaces automatically takes you into that repo.
 # else, lets start in the root of our workspaces directory (the w alias)
 # on reload keep same dir (it writes a .curr file)
-if [ -f "${DOT_FILES_PATH}/.curr" ]; then 
+if [ -f "${DOT_FILES_PATH}/.curr" ]; then
     curr_dir=$(cat "${DOT_FILES_PATH}/.curr")
     cd "${curr_dir}"
     rm -rf .curr > /dev/null
-elif [ -z "${CODESPACES}" ]; then 
+elif [ -z "${CODESPACES}" ]; then
 w
 fi

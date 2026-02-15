@@ -26,8 +26,4 @@ function dot_load() {
     if [ -f "${priv_sec}" ]; then
         source "${priv_sec}"
     fi
-
-    # echo "sourcing ${DOT_FILES_PATH}/dot/tools.sh"
-    # source "${DOT_FILES_PATH}/dot/tools.sh"  
-    # echo "done"
 }

@@ -4,7 +4,7 @@ SCRIPT_DIR="$( cd "$( dirname "$0" )" && pwd )"
 . $SCRIPT_DIR/common.sh
 
 assert() {
-    if [ ! -f "${DOT_TOOLS_PATH}/${1}.sh" ]; then 
+    if [ ! -f "${DOT_TOOLS_PATH}/${1}_util.sh" ]; then
         echo "Tool not found: $1"
         exit 1
     fi
@@ -12,30 +12,31 @@ assert() {
 
 info() {
     assert "$1"
-    "${DOT_TOOLS_PATH}/${1}.sh" "info"
+    "${DOT_TOOLS_PATH}/${1}_util.sh" "info"
 }
 
 install() {
     assert "$1"
-    "${DOT_TOOLS_PATH}/${1}.sh" "install"
-} 
+    "${DOT_TOOLS_PATH}/${1}_util.sh" "install"
+}
 
 whoami() {
     assert "$1"
-    "${DOT_TOOLS_PATH}/${1}.sh" "whoami"
+    "${DOT_TOOLS_PATH}/${1}_util.sh" "whoami"
 }
 
 ls() {
-    count=$(find "${DOT_TOOLS_PATH}" -name "*.sh" | wc -l)
+    count=$(find "${DOT_TOOLS_PATH}" -name "*_util.sh" | wc -l)
     if [ $count -eq 0 ]; then return; fi
 
-    echo 
+    echo
     dot_section "Tools"
     echo
-    # echo 
-    for file in ${DOT_TOOLS_PATH}/*.sh; do
-        file_name="$(basename -s .sh $file)"
-        cprint "  🔹  $file_name\n" "white" "intense";
+    # echo
+    for file in ${DOT_TOOLS_PATH}/*_util.sh; do
+        file_name="$(basename $file)"
+        tool_name="${file_name%_util.sh}"
+        cprint "  🔹  $tool_name\n" "white" "intense";
     done
 
     echo
@@ -45,7 +46,7 @@ ls() {
     dot_message "tools install <name>" "install the tool"
     echo
     dot_message "tools whoami <name>" "logged in as for the the tool"
-    echo 
+    echo
 }
 
 "$@"
