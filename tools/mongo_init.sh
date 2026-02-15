@@ -1,6 +1,6 @@
-export TOOL_MONGO_PATH=`which mongod`
+#!/bin/bash -e
 
-if [ -f ${TOOL_MONGO_PATH} ]; then
+if [ -x "$(command -v mongod)" ]; then
     dbPath="${HOME}/data/mongodb";
     mkdir -p ${dbPath}
     alias mongod="ulimit -n 1024 && sudo mongod --dbpath ${dbPath}"

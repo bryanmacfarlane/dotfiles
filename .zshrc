@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/bryan/.zsh/completions:"* ]]; then export FPATH="/Users/bryan/.zsh/completions:$FPATH"; fi
 # .zshrc is a symlink to .zshrc in this repo wherever it is cloned on disk
 export DOT_FILES_PATH=$(dirname $(readlink ~/.zshrc))
 export DOT_DOT_PATH="${DOT_FILES_PATH}/dot"
@@ -36,3 +38,6 @@ if [ -f "${DOT_FILES_PATH}/.curr" ]; then
 elif [ -z "${CODESPACES}" ]; then 
 w
 fi
+# Initialize zsh completions (added by deno install script)
+autoload -Uz compinit
+compinit

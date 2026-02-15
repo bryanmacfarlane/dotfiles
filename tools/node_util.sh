@@ -1,9 +1,10 @@
 #!/bin/bash -e
+export NODE_VERSION=24
 
 info() {
-	if [ -f ${TOOL_NODE_PATH} ]; then
+    if [ -x "$(command -v node)" ]; then
 		printf "node: %s\n" "$(node --version)"
-	else 
+	else
 		echo "Node not installed"
 	fi
 
@@ -22,6 +23,7 @@ whoami() {
 }
 
 install() {
+    echo "installing node ${NODE_VERSION}..."
     brew install "node@${NODE_VERSION}"
 }
 
