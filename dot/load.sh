@@ -20,7 +20,9 @@ function dot_load() {
     for filename in ${DOT_FILES_PATH}/rc/*.sh; do
         source "${filename}"
     done
+}
 
+function dot_load_secrets() {
     # # load secrets
     local priv_sec="${DOT_PRIV_PATH}/common/secrets.sh"
     if [ -f "${priv_sec}" ]; then

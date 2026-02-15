@@ -25,6 +25,7 @@ PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{250}%1~%f%b %(!.#.$) '
 dot_load
 dot_help
 dot_tools "init"
+dot_load_secrets
 
 # codespaces automatically takes you into that repo.
 # else, lets start in the root of our workspaces directory (the w alias)
